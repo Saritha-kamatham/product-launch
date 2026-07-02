@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroSound Pro | Premium Active Noise-Cancelling Headphones</title>
+    <meta name="description" content="Experience pure auditory perfection with AeroSound Pro. Featuring hybrid Active Noise Cancellation, 60-hour battery life, and spatial audio.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader-screen" class="loader-container">
+        <div class="loader-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-dot"></div>
+        </div>
+        <p class="loader-text">Tuning your experience...</p>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header id="header">
+        <div class="nav-container container">
+            <a href="#home" class="logo-link" id="logo">
+                <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20M17 5v14M22 9v6M7 7v10M2 10v4"/>
+                </svg>
+                <span>AeroSound</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle dark mode" class="btn-icon">
+                    <!-- Sun Icon (shown in dark mode) -->
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <!-- Moon Icon (shown in light mode) -->
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                
+                <button id="mobile-menu-toggle" aria-label="Open navigation menu" class="hamburger">
+                    <span class="bar bar-1"></span>
+                    <span class="bar bar-2"></span>
+                    <span class="bar bar-3"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-container container grid-2">
+                <div class="hero-content reveal-fade-up">
+                    <span class="hero-tag">Sound of the Future</span>
+                    <h1 class="hero-title">Experience Audio in <span class="gradient-text">Pure Silence</span></h1>
+                    <p class="hero-desc">Elevate your auditory senses with AeroSound Pro. Featuring hybrid Active Noise Cancellation, personalized spatial audio, and an industry-leading 60 hours of wireless bliss.</p>
+                    <div class="hero-btns">
+                        <button class="btn btn-primary" id="hero-buy-btn">Buy Now</button>
+                        <a href="#features" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="hero-slider-wrapper reveal-zoom-in">
+                    <div class="slider-container" id="hero-slider">
+                        <div class="slide active">
+                            <img src="images/hero.png" alt="AeroSound Pro Headphone - Sleek Grey View">
+                        </div>
+                        <div class="slide">
+                            <img src="images/product1.png" alt="AeroSound Pro Headphone - Close up of Earcup">
+                        </div>
+                        <div class="slide">
+                            <img src="images/product2.png" alt="AeroSound Pro Headphone - Folded with case">
+                        </div>
+                    </div>
+                    
+                    <!-- Slider Navigation -->
+                    <button class="slider-arrow prev" id="slider-prev" aria-label="Previous image">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"/>
+                        </svg>
+                    </button>
+                    <button class="slider-arrow next" id="slider-next" aria-label="Next image">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </button>
+                    
+                    <div class="slider-dots" id="slider-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <span class="section-tag">Key Features</span>
+                    <h2 class="section-title">Designed for Ultimate Comfort & Acoustics</h2>
+                    <p class="section-subtitle">Every curve and component of the AeroSound Pro is engineered to deliver a revolutionary sound experience without compromise.</p>
+                </div>
+                
+                <div class="features-grid grid-3">
+                    <!-- Feature Card 1 -->
+                    <div class="feature-card reveal-fade-up">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="16" height="10" rx="2" ry="2"/>
+                                <line x1="22" y1="11" x2="22" y2="13"/>
+                                <line x1="6" y1="11" x2="10" y2="11"/>
+                                <line x1="10" y1="11" x2="10" y2="14"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Fast Performance</h3>
+                        <p class="feature-desc">Power up instantly with ultra-fast charging. Get 5 hours of immersive playtime from a quick 10-minute charge.</p>
+                    </div>
+
+                    <!-- Feature Card 2 -->
+                    <div class="feature-card reveal-fade-up" data-delay="100">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Premium Design</h3>
+                        <p class="feature-desc">Crafted with aircraft-grade aluminum, sleek steel joints, and premium memory-foam leather cushions.</p>
+                    </div>
+
+                    <!-- Feature Card 3 -->
+                    <div class="feature-card reveal-fade-up" data-delay="200">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Secure Payment</h3>
+                        <p class="feature-desc">Your order is completely protected. Enjoy a safe and encrypted checkout with multi-payment methods.</p>
+                    </div>
+
+                    <!-- Feature Card 4 -->
+                    <div class="feature-card reveal-fade-up">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21.2 15c.9-1.2 1.4-2.5 1.4-3.9 0-3.3-3-6-6.6-6-2.2 0-4.1 1-5.2 2.6C9.7 6.5 8 5.7 6.2 5.7 2.8 5.7 0 8.5 0 12c0 1.2.3 2.3.9 3.3"/>
+                                <path d="M21.5 15H2.4c-1.3 0-2.4 1.1-2.4 2.4s1.1 2.4 2.4 2.4h19.1c1.3 0 2.4-1.1 2.4-2.4s-1.1-2.4-2.4-2.4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Cloud Sync</h3>
+                        <p class="feature-desc">Seamless multi-device pairing. Sync sound profiles and presets automatically via your smart account.</p>
+                    </div>
+
+                    <!-- Feature Card 5 -->
+                    <div class="feature-card reveal-fade-up" data-delay="100">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20M17 5v14M22 9v6M7 7v10M2 10v4"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">AI Powered</h3>
+                        <p class="feature-desc">Smart environment-sensing ANC adjusts noise blocking in real-time, delivering crisp details in any room.</p>
+                    </div>
+
+                    <!-- Feature Card 6 -->
+                    <div class="feature-card reveal-fade-up" data-delay="200">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">24/7 Support</h3>
+                        <p class="feature-desc">Our audiophile support desk is here for you day and night. Connect anytime for assistance or queries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Gallery Section -->
+        <section id="gallery" class="gallery-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <span class="section-tag">Product Gallery</span>
+                    <h2 class="section-title">Designed to Look and Sound Exquisite</h2>
+                    <p class="section-subtitle">Take a closer look at the stunning form factor, modular hinges, and meticulous craftsmanship of the AeroSound Pro.</p>
+                </div>
+
+                <div class="gallery-grid grid-3">
+                    <!-- Gallery Item 1 -->
+                    <div class="gallery-card reveal-fade-up" data-src="images/product1.png">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/product1.png" alt="AeroSound Pro - Close up of active noise cancelling ear cushions">
+                            <div class="gallery-overlay">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                                    <line x1="11" y1="8" x2="11" y2="14"/>
+                                    <line x1="8" y1="11" x2="14" y2="11"/>
+                                </svg>
+                                <span>Zoom View</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Dynamic Acoustic Seals</h4>
+                            <p>Anatomically shaped memory foam cups</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 2 -->
+                    <div class="gallery-card reveal-fade-up" data-delay="100" data-src="images/product2.png">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/product2.png" alt="AeroSound Pro - Premium velvet travel case and folded design">
+                            <div class="gallery-overlay">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                                    <line x1="11" y1="8" x2="11" y2="14"/>
+                                    <line x1="8" y1="11" x2="14" y2="11"/>
+                                </svg>
+                                <span>Zoom View</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Foldable Space-Saving Build</h4>
+                            <p>Premium protective hardshell travel case</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 3 -->
+                    <div class="gallery-card reveal-fade-up" data-delay="200" data-src="images/product3.png">
+                        <div class="gallery-img-wrapper">
+                            <img src="images/product3.png" alt="AeroSound Pro - Headphone placed on a sleek wooden stand">
+                            <div class="gallery-overlay">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"/>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                                    <line x1="11" y1="8" x2="11" y2="14"/>
+                                    <line x1="8" y1="11" x2="14" y2="11"/>
+                                </svg>
+                                <span>Zoom View</span>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4>Minimalist Aesthetic</h4>
+                            <p>Blends beautifully into any workspace</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Container -->
+        <div id="lightbox" class="lightbox-modal">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">&times;</button>
+            <div class="lightbox-content">
+                <img id="lightbox-img" src="" alt="Zoomed image preview">
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <section class="stats-section section-padding">
+            <div class="container">
+                <div class="stats-grid grid-4" id="stats-counter-section">
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-customers" data-target="10000">0</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-reviews" data-target="500">0</div>
+                        <div class="stat-label">5-Star Reviews</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-satisfaction" data-target="99">0</div>
+                        <div class="stat-label">Satisfaction Rate (%)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-countries" data-target="50">0</div>
+                        <div class="stat-label">Countries Shipped</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <span class="section-tag">Pricing Plans</span>
+                    <h2 class="section-title">Select the Perfect Setup for You</h2>
+                    <p class="section-subtitle">Whether you are a casual listener or a professional studio producer, we have the ideal package for your acoustic needs.</p>
+                </div>
+
+                <div class="pricing-grid grid-3">
+                    <!-- Pricing Card 1 -->
+                    <div class="pricing-card reveal-fade-up" id="pricing-starter" data-plan="starter">
+                        <div class="pricing-header">
+                            <span class="plan-badge">Lite</span>
+                            <h3 class="plan-name">Starter</h3>
+                            <div class="plan-price">
+                                <span class="currency">₹</span>
+                                <span class="price-val">499</span>
+                                <span class="duration">/mo</span>
+                            </div>
+                            <p class="plan-desc">Perfect for entry-level music lovers.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-check"><polyline points="20 6 9 17 4 12"/></svg>
+                                5 Custom Preset Profiles
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-check"><polyline points="20 6 9 17 4 12"/></svg>
+                                Standard Audio EQ Tuning
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-check"><polyline points="20 6 9 17 4 12"/></svg>
+                                Basic Active Noise Cancellation
+                            </li>
+                            <li class="disabled">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                Hi-Res Audio Mode
+                            </li>
+                            <li class="disabled">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                Email Support
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary select-plan-btn">Choose Starter</button>
+                    </div>
+
+                    <!-- Pricing Card 2 (Recommended) -->
+                    <div class="pricing-card recommended-plan reveal-fade-up" id="pricing-professional" data-plan="professional" data-delay="100">
+                        <div class="card-glow"></div>
+                        <div class="pricing-header">
+                            <span class="plan-badge">Popular</span>
+                            <h3 class="plan-name">Professional</h3>
+                            <div class="plan-price">
+                                <span class="currency">₹</span>
+                                <span class="price-val">999</span>
+                                <span class="duration">/mo</span>
+                            </div>
+                            <p class="plan-desc">A complete package for audio enthusiasts.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-check"><polyline points="20 6 9 17 4 12"/></svg>
+                                15 Custom Preset Profiles
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-check"><polyline points="20 6 9 17 4 12"/></svg>
+                                Advanced Audio EQ Customizer
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-check"><polyline points="20 6 9 17 4 12"/></svg>
+                                Hybrid Active Noise Cancellation
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-check"><polyline points="20 6 9 17 4 12"/></svg>
+                                Hi-Res Audio Mode (LDAC)
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-check"><polyline points="20 6 9 17 4 12"/></svg>
+                                Priority Email & Chat Support
+                            </li>
+                        </ul>
+                        <button class="btn btn-primary select-plan-btn">Choose Professional</button>
+                    </div>
+
+                    <!-- Pricing Card 3 -->
+                    <div class="pricing-card reveal-fade-up" id="pricing-enterprise" data-plan="enterprise" data-delay="200">
+                        <div class="pricing-header">
+                            <span class="plan-badge">Unlimited</span>
+                            <h3 class="plan-name">Enterprise</h3>
+                            <div class="plan-price">
+                                <span class="currency">₹</span>
+                                <span class="price-val">1999</span>
+                                <span class="duration">/mo</span>
+                            </div>
+                            <p class="plan-desc">For commercial studios and audiophiles.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-check"><polyline points="20 6 9 17 4 12"/></svg>
+                                Unlimited Custom Preset Profiles
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-check"><polyline points="20 6 9 17 4 12"/></svg>
+                                Professional Acoustic Room Calibrator
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-check"><polyline points="20 6 9 17 4 12"/></svg>
+                                Ultra-Isolation Studio ANC Mode
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-check"><polyline points="20 6 9 17 4 12"/></svg>
+                                Studio Master Quality Stream
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="icon-check"><polyline points="20 6 9 17 4 12"/></svg>
+                                Dedicated Account Manager Support
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary select-plan-btn">Choose Enterprise</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <span class="section-tag">Testimonials</span>
+                    <h2 class="section-title">What Our Listeners Are Saying</h2>
+                    <p class="section-subtitle">Real feedback from producers, musicians, and everyday audiophiles around the globe.</p>
+                </div>
+
+                <div class="testimonials-grid grid-3">
+                    <!-- Testimonial Card 1 -->
+                    <div class="testimonial-card reveal-fade-up">
+                        <div class="testimonial-header">
+                            <img src="images/users/user1.png" alt="Sarah Jenkins" class="user-avatar">
+                            <div>
+                                <h4 class="user-name">Sarah Jenkins</h4>
+                                <span class="user-role">UI/UX Designer</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+                        <p class="review-text">"The active noise cancellation is simply magic. I work in a loud open-plan office, and these headphones let me slip into deep work instantly. Worth every rupee!"</p>
+                    </div>
+
+                    <!-- Testimonial Card 2 -->
+                    <div class="testimonial-card reveal-fade-up" data-delay="100">
+                        <div class="testimonial-header">
+                            <img src="images/users/user2.png" alt="Arjun Mehta" class="user-avatar">
+                            <div>
+                                <h4 class="user-name">Arjun Mehta</h4>
+                                <span class="user-role">Music Producer</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+                        <p class="review-text">"As a producer, sound accuracy is everything. The AeroSound Pro offers an incredibly flat response curve, presenting depth and detail without artificial bass boost. Outstanding."</p>
+                    </div>
+
+                    <!-- Testimonial Card 3 -->
+                    <div class="testimonial-card reveal-fade-up" data-delay="200">
+                        <div class="testimonial-header">
+                            <img src="images/users/user3.png" alt="David Miller" class="user-avatar">
+                            <div>
+                                <h4 class="user-name">David Miller</h4>
+                                <span class="user-role">Digital Nomad</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+                        <p class="review-text">"The 60-hour battery life is a complete game changer. I flew across three continents last week and didn't have to charge them once. Extremely comfortable on long flights too!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <span class="section-tag">FAQ</span>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Got questions? We have got answers. If you do not find what you are looking for, contact us below.</p>
+                </div>
+
+                <div class="faq-accordion reveal-fade-up">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Is shipping free?</span>
+                            <span class="faq-icon-wrapper">
+                                <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes, we offer free express shipping on all orders nationwide. Standard delivery takes 2-4 business days depending on your location, with real-time tracking provided upon dispatch.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What is the warranty?</span>
+                            <span class="faq-icon-wrapper">
+                                <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Every AeroSound Pro comes with a 2-year warranty that covers all manufacturing defects and battery performance issues. We also offer a dedicated 24/7 technical helpdesk to assist with settings.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Can I return the product?</span>
+                            <span class="faq-icon-wrapper">
+                                <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Absolutely. We stand behind our quality. We offer a 30-day money-back guarantee. If you are not entirely satisfied with your purchase, you can return it for a full refund—no questions asked.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Is online payment secure?</span>
+                            <span class="faq-icon-wrapper">
+                                <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes, all transactions are processed using fully secure, 256-bit SSL encrypted gateways. We do not store your credit card information, and we support secure options like UPI, Cards, and Net Banking.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section section-padding">
+            <div class="container">
+                <div class="newsletter-card reveal-fade-up">
+                    <div class="newsletter-content">
+                        <h3>Join the AeroSound Club</h3>
+                        <p>Subscribe to receive exclusive deals, acoustic design guides, and priority product drop updates.</p>
+                        <form id="newsletter-form" class="newsletter-form" novalidate>
+                            <div class="input-group">
+                                <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address" required aria-label="Email address">
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </div>
+                            <span class="error-msg" id="newsletter-error"></span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container grid-2">
+                <div class="contact-info reveal-fade-up">
+                    <span class="section-tag">Get in Touch</span>
+                    <h2 class="section-title">We are Here to Help</h2>
+                    <p class="contact-desc">Have a question about specs, shipping status, or volume discounts? Drop us a message, and our customer support team will get back to you within 2 hours.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method-item">
+                            <div class="method-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h5>Email Support</h5>
+                                <p>support@aerosound.co.in</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method-item">
+                            <div class="method-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h5>Call Center</h5>
+                                <p>+91 (800) 555-0199</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper reveal-fade-up" data-delay="100">
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <h4 class="form-title">Send a Message</h4>
+                        
+                        <div class="form-group">
+                            <label for="contact-name">Full Name</label>
+                            <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
+                            <span class="error-msg" id="name-error"></span>
+                        </div>
+
+                        <div class="form-group grid-2-sub">
+                            <div>
+                                <label for="contact-email">Email Address</label>
+                                <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
+                                <span class="error-msg" id="email-error"></span>
+                            </div>
+                            <div>
+                                <label for="contact-phone">Phone Number</label>
+                                <input type="tel" id="contact-phone" name="phone" placeholder="9876543210" required>
+                                <span class="error-msg" id="phone-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" rows="4" placeholder="Hi there! I am interested in..." required></textarea>
+                            <span class="error-msg" id="message-error"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <a href="#home" class="logo-link">
+                    <svg class="logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v20M17 5v14M22 9v6M7 7v10M2 10v4"/>
+                    </svg>
+                    <span>AeroSound</span>
+                </a>
+                <p class="footer-desc">Crafting state-of-the-art acoustic instruments that blend elegant design with cutting-edge engineering since 2024.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#pricing">Pricing Plans</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#testimonials">Customer Reviews</a></li>
+                    <li><a href="#faq">FAQ Help</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-socials">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; 2026 AeroSound Instruments Pvt. Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <!-- Main Javascript File -->
+    <script src="script.js"></script>
+</body>
+</html>
