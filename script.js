@@ -596,4 +596,78 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(element => revealObserver.observe(element));
 
+
+    /* ==========================================================================
+       16. 3D INTERACTIVE TILT ANIMATION
+       ========================================================================== */
+    const tiltElements = document.querySelectorAll('.feature-card, .pricing-card, .testimonial-card, .gallery-card');
+
+    tiltElements.forEach(card => {
+        // Create dynamic card shimmer elements
+        const shimmer = document.createElement('div');
+        shimmer.className = 'card-shimmer';
+        card.appendChild(shimmer);
+
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left; // x position within the element
+            const y = e.clientY - rect.top;  // y position within the element
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            // Calculate tilt angle (max 10 degrees)
+            const rotateX = ((centerY - y) / centerY) * 10;
+            const rotateY = ((x - centerX) / centerX) * 10;
+
+            // Set shimmer variables for CSS background
+            card.style.setProperty('--shimmer-x', `${(x / rect.width) * 100}%`);
+            card.style.setProperty('--shimmer-y', `${(y / rect.height) * 100}%`);
+
+            // Apply 3D perspective rotation
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            card.style.transition = 'none';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            // Smoothly animate back to baseline
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            card.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+        });
+    });
+
+    // Subtle tilt for the Hero slider images on mouse movement
+    const heroSliderWrapper = document.querySelector('.hero-slider-wrapper');
+    if (heroSliderWrapper) {
+        heroSliderWrapper.addEventListener('mousemove', (e) => {
+            const rect = heroSliderWrapper.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Subtle rotation (max 6 degrees)
+            const rotateX = ((centerY - y) / centerY) * 6;
+            const rotateY = ((x - centerX) / centerX) * 6;
+
+            const activeImg = heroSliderWrapper.querySelector('.slide.active img');
+            if (activeImg) {
+                // Pause float animation briefly by setting animation-play-state
+                activeImg.style.animationPlayState = 'paused';
+                activeImg.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
+                activeImg.style.transition = 'none';
+            }
+        });
+
+        heroSliderWrapper.addEventListener('mouseleave', () => {
+            const activeImg = heroSliderWrapper.querySelector('.slide.active img');
+            if (activeImg) {
+                activeImg.style.animationPlayState = 'running';
+                activeImg.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+                activeImg.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+            }
+        });
+    }
+
 });
