@@ -208,6 +208,106 @@
             </div>
         </section>
 
+        <!-- 3D Angle Explorer Section -->
+        <section id="angle-explorer" class="explorer-section section-padding">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <span class="section-tag">Interactive Explorer</span>
+                    <h2 class="section-title">Explore Every Angle</h2>
+                    <p class="section-subtitle">Use the slider or click the angle presets below to inspect the AeroSound Pro from multiple orientations and interact with its premium components.</p>
+                </div>
+
+                <div class="explorer-container grid-2 reveal-fade-up">
+                    <!-- Left: Interactive Viewer -->
+                    <div class="viewer-display-wrapper">
+                        <div class="viewer-card" id="interactive-viewer">
+                            <!-- Shimmer effect -->
+                            <div class="card-shimmer"></div>
+                            
+                            <!-- Main Product Image -->
+                            <div class="viewer-img-container">
+                                <img id="explorer-main-img" src="images/hero.png" alt="AeroSound Pro - Interactive angle view">
+                            </div>
+                            
+                            <!-- Hotspots (Visible only in default Front View) -->
+                            <div class="hotspot" id="hotspot-headband" style="top: 10%; left: 50%;" data-title="Tension-Free Arch" data-desc="Breathable knit mesh arch distributes weight evenly across your head to eliminate fatigue.">
+                                <span class="hotspot-pulse"></span>
+                                <span class="hotspot-dot"></span>
+                            </div>
+                            
+                            <div class="hotspot" id="hotspot-hinge" style="top: 38%; left: 33%;" data-title="Fluid Hinge Pivot" data-desc="Telescoping steel arms slide smoothly, and cups pivot dynamically for a perfect acoustic seal.">
+                                <span class="hotspot-pulse"></span>
+                                <span class="hotspot-dot"></span>
+                            </div>
+
+                            <div class="hotspot" id="hotspot-touchpad" style="top: 60%; left: 74%;" data-title="Smart Gesture Control" data-desc="Intuitive outer touchpad handles sweeps for volume, quick taps for playback, and press-holds for ANC.">
+                                <span class="hotspot-pulse"></span>
+                                <span class="hotspot-dot"></span>
+                            </div>
+
+                            <div class="hotspot" id="hotspot-padding" style="top: 70%; left: 45%;" data-title="Memory-Foam Cushions" data-desc="Acoustically designed memory-foam padding wrapped in ultra-soft protein leather for premium isolation.">
+                                <span class="hotspot-pulse"></span>
+                                <span class="hotspot-dot"></span>
+                            </div>
+                            
+                            <!-- Info Panel overlay -->
+                            <div class="hotspot-info-panel" id="hotspot-info-panel">
+                                <h4 id="hotspot-info-title">Interactive Hotspots</h4>
+                                <p id="hotspot-info-desc">Hover over any pulsing indicator to inspect materials and custom audio engineering details.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Angle Controls -->
+                    <div class="viewer-controls-wrapper">
+                        <div class="control-box">
+                            <h3>Inspect Product Orientation</h3>
+                            <p>Select a preset view or slide the rotation dial below to see the headphone design from all angles.</p>
+                            
+                            <!-- Presets -->
+                            <div class="angle-presets">
+                                <button class="angle-preset-btn active" data-angle="0">
+                                    <span>0°</span>
+                                    Front View
+                                </button>
+                                <button class="angle-preset-btn" data-angle="1">
+                                    <span>90°</span>
+                                    Profile Detail
+                                </button>
+                                <button class="angle-preset-btn" data-angle="2">
+                                    <span>180°</span>
+                                    Travel Profile
+                                </button>
+                                <button class="angle-preset-btn" data-angle="3">
+                                    <span>270°</span>
+                                    Workspace setup
+                                </button>
+                            </div>
+
+                            <!-- Range Slider -->
+                            <div class="slider-control-group">
+                                <div class="slider-labels">
+                                    <span>0°</span>
+                                    <span>90°</span>
+                                    <span>180°</span>
+                                    <span>270°</span>
+                                </div>
+                                <div class="slider-track-wrapper">
+                                    <input type="range" id="angle-range-slider" min="0" max="3" value="0" class="angle-range-slider" aria-label="Rotate product angle">
+                                </div>
+                                <div class="slider-helper">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                                    </svg>
+                                    Slide to Rotate Product
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Product Gallery Section -->
         <section id="gallery" class="gallery-section section-padding">
             <div class="container">

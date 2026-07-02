@@ -670,4 +670,144 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* ==========================================================================
+       17. 3D INTERACTIVE ANGLE EXPLORER
+       ========================================================================== */
+    const anglePresets = document.querySelectorAll('.angle-preset-btn');
+    const angleRangeSlider = document.getElementById('angle-range-slider');
+    const explorerMainImg = document.getElementById('explorer-main-img');
+    const interactiveViewer = document.getElementById('interactive-viewer');
+    const hotspots = document.querySelectorAll('.hotspot');
+    
+    const infoPanel = document.getElementById('hotspot-info-panel');
+    const infoTitle = document.getElementById('hotspot-info-title');
+    const infoDesc = document.getElementById('hotspot-info-desc');
+
+    const defaultTitle = "Interactive Hotspots";
+    const defaultDesc = "Hover over any pulsing indicator to inspect materials and custom audio engineering details.";
+
+    // Mapping of angle indices to image paths and alt texts
+    const angleMap = [
+        { src: 'images/hero.png', alt: 'AeroSound Pro - Front Angle View' },
+        { src: 'images/product1.png', alt: 'AeroSound Pro - Earcup Profile Detail' },
+        { src: 'images/product2.png', alt: 'AeroSound Pro - Folded Travel Case Profile' },
+        { src: 'images/product3.png', alt: 'AeroSound Pro - Minimalist Wooden Stand View' }
+    ];
+
+    const changeProductAngle = (index) => {
+        if (index < 0 || index > 3) return;
+
+        // Toggle presets active class
+        anglePresets.forEach(btn => btn.classList.remove('active'));
+        const activeBtn = Array.from(anglePresets).find(btn => parseInt(btn.getAttribute('data-angle'), 10) === index);
+        if (activeBtn) activeBtn.classList.add('active');
+
+        // Sync range slider
+        angleRangeSlider.value = index;
+
+        // Flip animation trigger
+        interactiveViewer.classList.add('flip-transition');
+
+        setTimeout(() => {
+            // Swap image source and alt tag
+            explorerMainImg.setAttribute('src', angleMap[index].src);
+            explorerMainImg.setAttribute('alt', angleMap[index].alt);
+            
+            // Toggle hotspots visibility (only visible in front angle 0)
+            hotspots.forEach(hotspot => {
+                if (index === 0) {
+                    hotspot.classList.remove('hidden');
+                } else {
+                    hotspot.classList.add('hidden');
+                }
+            });
+
+            // Reset info panel message on rotation
+            infoTitle.textContent = defaultTitle;
+            infoDesc.textContent = defaultDesc;
+            infoPanel.style.borderColor = '';
+        }, 300); // Swaps halfway through CSS Y-rotation (300ms of 600ms transition)
+
+        setTimeout(() => {
+            interactiveViewer.classList.remove('flip-transition');
+        }, 600);
+    };
+
+    // Range slider event
+    if (angleRangeSlider) {
+        angleRangeSlider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value, 10);
+            changeProductAngle(val);
+        });
+    }
+
+    // Preset buttons event
+    anglePresets.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const val = parseInt(btn.getAttribute('data-angle'), 10);
+            changeProductAngle(val);
+        });
+    });
+
+    // Hotspots Hover events
+    hotspots.forEach(hotspot => {
+        hotspot.addEventListener('mouseenter', () => {
+            const title = hotspot.getAttribute('data-title');
+            const desc = hotspot.getAttribute('data-desc');
+
+            infoTitle.textContent = title;
+            infoDesc.textContent = desc;
+            infoPanel.style.borderColor = 'var(--primary-color)';
+            
+            // Small subtle hover tilt highlight
+            interactiveViewer.style.transform = 'perspective(1000px) rotateX(2deg) scale(1.01)';
+        });
+
+        hotspot.addEventListener('mouseleave', () => {
+            infoTitle.textContent = defaultTitle;
+            infoDesc.textContent = defaultDesc;
+            infoPanel.style.borderColor = '';
+            
+            interactiveViewer.style.transform = '';
+        });
+    });
+
+    // Add 3D Tilt support to interactive viewer as well
+    if (interactiveViewer) {
+        // Create card shimmer element for viewer card too
+        const viewerShimmer = document.createElement('div');
+        viewerShimmer.className = 'card-shimmer';
+        interactiveViewer.appendChild(viewerShimmer);
+
+        interactiveViewer.addEventListener('mousemove', (e) => {
+            // Only tilt if we are NOT hovering over a hotspot, to keep description panel stable
+            if (e.target.classList.contains('hotspot') || e.target.closest('.hotspot') || e.target.closest('.hotspot-info-panel')) {
+                return;
+            }
+            
+            const rect = interactiveViewer.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            // Subtle rotation (max 6 degrees)
+            const rotateX = ((centerY - y) / centerY) * 6;
+            const rotateY = ((x - centerX) / centerX) * 6;
+
+            interactiveViewer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
+            interactiveViewer.style.transition = 'none';
+            
+            // Shimmer rotation
+            interactiveViewer.style.setProperty('--shimmer-x', `${(x / rect.width) * 100}%`);
+            interactiveViewer.style.setProperty('--shimmer-y', `${(y / rect.height) * 100}%`);
+        });
+
+        interactiveViewer.addEventListener('mouseleave', () => {
+            interactiveViewer.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            interactiveViewer.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+        });
+    }
+
 });
